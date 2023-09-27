@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 80px calc(100vh - 15px) 80px;
+  grid-template-areas:
+    "h h h h h h h h"
+    "c c c g g g g g"
+    "f f f f f f f f";
+}
+
+.header {
+  background-color: #f7d794;
+  grid-area: h;
+}
+.chatbox {
+  background-color: #f8a5c2;
+  grid-area: c;
+}
+.gameboard {
+  background-image: url(./img/bg.jpg);
+  background-size: cover;
+  background-color: rgba(0, 0 , 0, .8);
+  background-blend-mode:overlay;
+  grid-area: g;
+  display: grid;
+  grid-template-areas: "bn bn  bm bm bm";
+}
+
+.gameboard .board-main {
+  padding: 10px;
+
+  grid-area: bm;
+}
+
+.gameboard .board-main .game-sheet {
+  margin: auto;
+  width: 540px;
+  background-color: white;
+  height: 540px;
+  display: grid;
+  grid-auto-rows: 36px;
+  grid-auto-columns: 36px;
+  grid-template-columns: repeat(15, 1fr);
+  /* grid-template-areas:
+     "a01 "   */
+}
+
+.square {
+  background-color: transparent;
+  border: 1px solid gray;
+  width: 36px;
+}
+
+.station{
+  border: 1px solid gray;
+  grid-row: auto/span 6;
+  grid-column: auto/span 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#station-red {
+  background-color: red;
+}
+
+#station-blue {
+  background-color: blue;
+}
+#station-yellow {
+  background-color: yellow;
+}
+#station-green {
+  background-color: green;
+}
+
+.red-route{
+  background-color: red;
+}
+.blue-route{
+  background-color: blue;
+}
+.green-route{
+  background-color: green;
+}
+.yellow-route{
+  background-color: yellow;
+}
+
+.soldiers-wrapper{
+  padding: 10px;
+  width: 160px;
+  height: 160px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.soldiers-couple{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.soldier-img{
+  width : 25px;
+  margin: 10px;
+}
+
+.gameboard .board-side {
+  background-color: rgba(20, 30, 40, .3);
+  grid-area: bn;
+  min-width: 100px;
+}
+.gameboard .board-side .click-roll {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  padding: 5px 10px;
+}
+
+.gameboard .board-side .click-roll button{
+  padding: 15px;
+  box-shadow: 1px 2px 1px #feca57;
+  background-color: #ff9f43;
+  color: #222f3e;
+  font-weight: 700;
+}
+
+.arrow-img{
+  color: white
+}
+
+.footer {
+  background-color: #63cdda;
+  grid-area: f;
+}
