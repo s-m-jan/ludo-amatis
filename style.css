@@ -9,9 +9,9 @@
   display: grid;
   grid-template-rows: 80px calc(100vh - 15px) 80px;
   grid-template-areas:
-    "h h h h h h h h"
-    "c c c g g g g g"
-    "f f f f f f f f";
+    "h h h h h h h h h"
+    "c c g g g g g g g"
+    "f f f f f f f f f";
 }
 
 .header {
@@ -29,68 +29,94 @@
   background-blend-mode:overlay;
   grid-area: g;
   display: grid;
-  grid-template-areas: "bn bn  bm bm bm";
+  grid-template-areas: "bn bn bm bm bm bm bm bm";
 }
 
 .gameboard .board-main {
   padding: 10px;
-
   grid-area: bm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gameboard .board-main .game-sheet {
-  margin: auto;
+.gameboard .board-main .game-sheet{
   width: 540px;
-  background-color: white;
   height: 540px;
+  background-color: #fff;
   display: grid;
-  grid-auto-rows: 36px;
-  grid-auto-columns: 36px;
+  grid-template-rows: repeat(15, 1fr);
   grid-template-columns: repeat(15, 1fr);
-  /* grid-template-areas:
-     "a01 "   */
+}
+
+.station{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-sheet #blue-station{
+  background-color: blue;
+  grid-column: 10/16;
+  grid-row: 1/7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.game-sheet #red-station{
+  grid-column: 1/7;
+  grid-row: 1/7;
+ background-color: red;
+}
+.game-sheet #green-station{
+  grid-column: 10/16;
+  grid-row: 10/16;
+ background-color: green;
+}
+.game-sheet #yellow-station{
+  grid-column: 1/7;
+  grid-row: 10/16;
+ background-color: yellow;
+}
+.game-sheet #upper{
+  grid-column: 7/10;
+  grid-row: 1/7;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+.game-sheet #left{
+  grid-column: 10/16;
+  grid-row: 7/10;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+}
+.game-sheet #right{
+  grid-column: 1/7;
+  grid-row: 7/10;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.game-sheet #down{
+  grid-column: 7/10;
+  grid-row: 10/16;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+.game-sheet #center{
+  grid-column: 7/10;
+  grid-row: 7/10;
+  border: 2px solid indianred;
 }
 
 .square {
   background-color: transparent;
   border: 1px solid gray;
   width: 36px;
-}
-
-.station{
-  border: 1px solid gray;
-  grid-row: auto/span 6;
-  grid-column: auto/span 6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#station-red {
-  background-color: red;
-}
-
-#station-blue {
-  background-color: blue;
-}
-#station-yellow {
-  background-color: yellow;
-}
-#station-green {
-  background-color: green;
-}
-
-.red-route{
-  background-color: red;
-}
-.blue-route{
-  background-color: blue;
-}
-.green-route{
-  background-color: green;
-}
-.yellow-route{
-  background-color: yellow;
 }
 
 .soldiers-wrapper{
@@ -115,6 +141,24 @@
   width : 25px;
   margin: 10px;
 }
+
+.red-route{
+  background-color: red;
+}
+
+.blue-route{
+  background-color: blue;
+}
+.green-route{
+  background-color: green;
+}
+.yellow-route{
+  background-color: yellow;
+}
+
+
+
+
 
 .gameboard .board-side {
   background-color: rgba(20, 30, 40, .3);
