@@ -35,4 +35,18 @@ c.fillStyle = "green"
 c.fill()
 c.closePath()
 
+let diceButton = document.querySelector("#diceButton");
+diceButton.addEventListener("click", changeDice);
+function changeDice(){
+  let diceRandomNumber = Math.floor((Math.random()* 6) + 1)
+  console.log(diceRandomNumber)
+
+ if(diceRandomNumber == "1"){
+  document.querySelector(".showDice").innerHTML = <p>hello</p>
+ }
+ else if(diceRandomNumber == "2"){
+  document.querySelector(".showDice").innerHTML = <p>how are you</p>
+ }
+}
+
 

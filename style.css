@@ -185,6 +185,14 @@
   font-weight: 700;
 }
 
+.gameboard .board-side .showDice{
+  text-align: center;
+}
+
+.gameboard .board-side .showDice img{
+  width: 60%;
+}
+
 .arrow-img{
   color: white
 }
