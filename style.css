@@ -110,7 +110,6 @@
 .game-sheet #center{
   grid-column: 7/10;
   grid-row: 7/10;
-  border: 2px solid indianred;
 }
 
 .game-sheet #center canvas{
@@ -169,6 +168,10 @@
   background-color: rgba(20, 30, 40, .3);
   grid-area: bn;
   min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .gameboard .board-side .click-roll {
   margin: 20px auto;
@@ -187,10 +190,12 @@
 
 .gameboard .board-side .showDice{
   text-align: center;
+  width: 60%;
 }
 
 .gameboard .board-side .showDice img{
-  width: 60%;
+  width: 40%;
+  border-radius: 10px;
 }
 
 .arrow-img{
